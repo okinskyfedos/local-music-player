@@ -1,0 +1,81 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h2 {
+  background-color: red;
+  color: white;
+}
+ul {
+	    padding-top: 10px;
+
+}
+input[type=checkbox], input[type=radio]{
+	vertical-align: top;
+}
+.accordion-inner:before {
+    content: "|";
+    margin-right: 10px;
+}
+.accordion-inner {
+    font-size: 12px;
+    line-height: 1.7;
+    padding-left: 10px;
+    color: rosybrown;
+    text-transform: capitalize;
+}
+.accordion-heading{
+	text-transform:uppercase;
+}
+div#accordion2{
+	margin-top: 15px;
+}
+.glyphicon-remove{
+	color: #BF1F1F;
+	cursor: pointer;
+}
+span.glyphicon.glyphicon-edit {
+    color: #3EB5D8;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.accordion-heading {
+    margin-bottom: 5px;
+}
+
+.play_name{
+	border-radius: 8px;
+    padding: 5px;
+    border-color: #49779E;
+    margin:10px 15px;
+    outline: none;
+}
+.playlist_updatename{
+	font-size: 18px;
+    color: red;
+    cursor:pointer;
+}
+.glyphicon-ok{
+	color:green;
+}
+.error_length{
+	display:none;
+	color:red;
+}
+.add_new_music,.btn_all_list{
+	float: left;
+}
+#show_all_list{
+	display: none;
+	clear: both;
+    text-align: left;
+}
+.check_all_lab{
+	display: block;
+    margin-top: 10px;
+    cursor: pointer;
+}

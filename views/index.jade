@@ -1,0 +1,110 @@
+extends layout
+block content
+    div(class="container-fluid")
+        div(class="row")
+            div(class="col-lg-3 col-md-12")
+                h3 inKaffe
+                div(id = "dblist")
+                    h4 All LIST DB
+                    a.refresh_list.btn.btn-default(href='#')
+                        span.glyphicon.glyphicon-refresh
+                        |  Refresh All List
+                    label.check_all_lab
+                        input.check_all(type='checkbox')
+                        |  Select All  
+                    ol(id = "dblistcont")
+                    br   
+                    button#create_playlist.btn.btn-info(type='button') Create Play List    
+            div(class="col-lg-9 col-md-12")
+                div(class="row")
+                    div(class="col-lg-9 col-md-12")
+                        div(class="row")
+                            div(class="col-lg-3 col-md-12")
+                
+                                div
+                                    h3 All Disk
+                                    a.refresh_disklist.btn.btn-default(href='#')
+                                        span.glyphicon.glyphicon-refresh
+                                        |  Refresh Disk List
+                                    ul.all_disk_list
+                                    input(id = "scanFiles" class = "btn" type = "button" value = "Scan Media Files")
+                                    //- input(id = "scanConvertFiles" class = "btn" type = "button" value = "Convert Media Files")
+                                ol( id = "filesList" )
+                            div(class="col-lg-6 col-md-12")
+                                h1 PLAYER
+                                //Player
+                                #jp_container_N.jp-video.jp-video-270p(role='application', aria-label='media player')
+                                  .jp-type-playlist
+                                    #jquery_jplayer_N.jp-jplayer
+                                    .jp-gui
+                                      .jp-video-play
+                                        button.jp-video-play-icon(role='button', tabindex='0') play
+                                      .jp-interface
+                                        .jp-progress
+                                          .jp-seek-bar
+                                            .jp-play-bar
+                                        .jp-current-time(role='timer', aria-label='time')  
+                                        .jp-duration(role='timer', aria-label='duration')  
+                                        .jp-details
+                                          .jp-title(aria-label='title')  
+                                        .jp-controls-holder
+                                          .jp-volume-controls
+                                            button.jp-mute(role='button', tabindex='0') mute
+                                            button.jp-volume-max(role='button', tabindex='0') max volume
+                                            .jp-volume-bar
+                                              .jp-volume-bar-value
+                                          .jp-controls
+                                            button.jp-previous(role='button', tabindex='0') previous
+                                            button.jp-play(role='button', tabindex='0') play
+                                            button.jp-stop(role='button', tabindex='0') stop
+                                            button.jp-next(role='button', tabindex='0') next
+                                          .jp-toggles
+                                            button.jp-repeat(role='button', tabindex='0') repeat
+                                            button.jp-shuffle(role='button', tabindex='0') shuffle
+                                            button.jp-full-screen(role='button', tabindex='0') full screen
+                                    .jp-playlist
+                                      ul
+                                        // The method Playlist.displayPlaylist() uses this unordered list
+                                        li
+                                    .jp-no-solution
+                                      span Update Required
+                                      |             To play the media you will need to either update your browser to a recent version or update your 
+                                      a(href='http://get.adobe.com/flashplayer/', target='_blank') Flash plugin
+                                      | .
+                            div(class="col-lg-3 col-md-12")
+                    div(class="col-lg-3 col-md-12")
+                        h3 PLAYLIST
+                        a.refresh_playlist.btn.btn-default(href='#')
+                            span.glyphicon.glyphicon-refresh
+                            |  Refresh PlayList
+                        #accordion2.accordion
+                //- div(class="row")
+                //-     div(class="col-lg-9 col-md-12")
+                //-         h1= title
+                //-     div(class="col-lg-3 col-md-12")
+                      
+        div(class="row")
+            div(class="col-lg-6 col-md-6")
+                div(id="socketData")
+                span(id="filePath")
+                progress(id="p1" value="0" max="100")
+
+        #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+          .modal-dialog(role='document')
+            .modal-content
+              .modal-header
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') ×
+                h4#myModalLabel.modal-title EDIT PLAYLIST
+              .modal-body
+                .play-cont
+                ol  
+              .modal-footer
+                a.btn.btn-default.btn_all_list(href='#')
+                  span.glyphicon.glyphicon-chevron-down
+                  |  Show All List
+                #show_all_list
+                    ul( id = "list_cont" )
+                    button.btn.btn-info.add_new_music.btn-xs(type='button') ADD NEW MUSIC
+                button.btn.btn-default(type='button', data-dismiss='modal') Close 
+        
